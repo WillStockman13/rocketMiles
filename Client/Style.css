@@ -1,5 +1,4 @@
 body {
-	/*text-align: center;*/
     background-image: url('bg.png')
 }
 .petName {
@@ -20,20 +19,16 @@ body {
 	padding-top: 10px;
 }
 .title {
-    /*margin: 0px 375px 20px 375px;*/
-    margin: 20px 230px 20px 230px;
+    margin: 10px 200px 20px 200px;
     text-align: center;
     background-color: white;
 }
 
 .title, .mainDiv2 {
+	padding: 10px 20px 10px 20px;
 	border-radius: 20px;
 }
 
-.image {
-	float: left;
-	clear: right;
-}
 .panel {
 	margin-bottom: 200px;
 }
@@ -43,3 +38,15 @@ body {
 	font-size: 20px;
 }
 
+.login {
+	margin-top: 100px;
+	padding: 100px 100px 100px 100px;
+}
+
+.inputLogIn {
+  font-size: 25px;
+}
+
+.logInTitle {
+	font-size: 60px;
+}

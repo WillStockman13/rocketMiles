@@ -1,5 +1,28 @@
 <div id='container'>
   <body>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Search Options
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li> 
+        <div>
+          <div>
+            Animal Type:
+          </div>
+          <input val="text" ng-model='type' placeholder="Enter Dog, Cat or Other">
+        </div>
+        <div>
+          <div>
+            Zip Code:
+          </div>
+          <input val='text' ng-model='zip' placeholder="Enter Zip Code">
+        </div>
+
+        <button ng-click="refineSearch({'zip-code': zip, 'pet': type})" class="btn btn-default btn-warning">Submit
+        </button>
+      </li>
+    </ul>
+  </div>
     <div class='col-md-12'>
         <h1 class='title'>Pet Finder</h1>
         <div class="mainDiv">

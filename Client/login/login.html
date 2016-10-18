@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <link rel="stylesheet" href="stylesheet.css">
+  <title>Log In</title>
+  </head>
+  <body>
+	<div class="mainDiv login" >
+	  <div><p class="logInTitle">Log In<p></div>
+	  <div><input name="username" placeholder="UserName" class="inputLogIn" ng-model="username"></div>
+	  <div><input name="password" placeholder="Password" class="inputLogIn" ng-model="password"></div>
+	  <div><button class="inputLogIn" ng-click="auth({'username': username, 'password': password})">Submit</button></div>
+	</div>
+  </body>
+</html>

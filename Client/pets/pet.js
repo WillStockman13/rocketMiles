@@ -5,29 +5,70 @@ angular.module('pet')
   $scope.generateDogLike = function() {
     console.log('hello')
   	$scope.Like($scope.data);
-    return $http({
-    	method: 'GET',
-    	url: '/generate'
-    })
-    .then(function(resp) {
-      console.log('after resp')
-      $scope.data = resp;
-      $scope.pic = resp.data.petfinder.pet.media.photos.photo[2]['$t'];
-      $scope.name = resp.data.petfinder.pet.name['$t'];
-    })
+    if($scope.url) {
+      console.log('it works')
+      return $http({
+        method: 'POST',
+        url: '/generate',
+        data: $scope.url
+      })
+      .then(function(resp) {
+        $scope.data = resp;
+        $scope.pic = resp.data.petfinder.pet.media.photos.photo[2]['$t'];
+        $scope.name = resp.data.petfinder.pet.name['$t'];
+      })
+    } else {
+      return $http({
+        method: 'GET',
+        url: '/generate'
+      }) 
+      .then(function(resp) {
+        $scope.data = resp;
+        $scope.pic = resp.data.petfinder.pet.media.photos.photo[2]['$t'];
+        $scope.name = resp.data.petfinder.pet.name['$t'];
+      })
+    }
   };
   
    $scope.generateDogDisLike = function() {
+    if($scope.url) {
+      return $http({
+        method: 'POST',
+        url: '/generate',
+        data: $scope.url
+      })
+      .then(function(resp) {
+        $scope.data = resp;
+        $scope.pic = resp.data.petfinder.pet.media.photos.photo[2]['$t'];
+        $scope.name = resp.data.petfinder.pet.name['$t'];
+      })
+    } else {
+      return $http({
+      	method: 'GET',
+      	url: '/generate'
+      }) 
+      .then(function(resp) {
+        $scope.data = resp;
+        $scope.pic = resp.data.petfinder.pet.media.photos.photo[2]['$t'];
+        $scope.name = resp.data.petfinder.pet.name['$t'];
+      })
+    }
+  };
+
+  $scope.refineSearch = function(obj) {
+    console.log(obj)
+    $scope.url = obj;
     return $http({
-    	method: 'GET',
-    	url: '/generate'
+      method: 'POST',
+      url: '/generate',
+      data: obj
     })
     .then(function(resp) {
       $scope.data = resp;
       $scope.pic = resp.data.petfinder.pet.media.photos.photo[2]['$t'];
       $scope.name = resp.data.petfinder.pet.name['$t'];
     })
-  };
+  }
 
   $scope.Like = function(data) {
 
@@ -46,10 +87,6 @@ angular.module('pet')
   	.then(function(resp) {
   		console.log('done')
   	})
-  }
-
-  $scope.redirectToResults = function() {
-
   }
 
 });

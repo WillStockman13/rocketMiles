@@ -23,11 +23,28 @@ app.get('/generate', function(req, res) {
   })
 })
 
+app.post('/generate', function(req, res) {
+  if(req.body['zip-code'] && req.body.pet) {
+    request('http://api.petfinder.com/pet.getRandom?key=e80c32747899d292d6120960348e0976&format=json&output=basic&location='+ req.body['zip-code'] + '&breed=' + req.body.pet, function(req, error, body) {
+      res.end(body)
+    })
+  } else if(req.body['zip-code']) {
+    request('http://api.petfinder.com/pet.getRandom?key=e80c32747899d292d6120960348e0976&format=json&output=basic&location='+ req.body['zip-code'], function(req, error, body) {
+      res.end(body)
+    })   
+  } else if(req.body.pet) {
+    request('http://api.petfinder.com/pet.getRandom?key=e80c32747899d292d6120960348e0976&format=json&output=basic&location='+ '&breed=' + req.body.pet, function(req, error, body) {
+      res.end(body)
+    })
+  } else {
+    request('http://api.petfinder.com/pet.getRandom?key=e80c32747899d292d6120960348e0976&format=json&output=basic', function(req, error, body) {
+      res.end(body)
+    })
+  }
+})
+
 app.post('/database', function(req, res) {
-
-	console.log('im in here', req.body)
 	fs.appendFile('data', JSON.stringify(req.body))
-
   res.end()
 })
 
@@ -49,6 +66,7 @@ app.get('/getDB', function(req, res) {
 	  	res.end(JSON.stringify(Final))
   })
 })
+
 
 
 app.listen(3000, function() {

@@ -1,7 +1,7 @@
 angular.module('pet', ['ngRoute'])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/dogs', {
+    .when('/pets', {
       templateUrl: 'pets/pet.html',
       controller: 'DogsController'
     })
@@ -11,8 +11,12 @@ angular.module('pet', ['ngRoute'])
       controller: 'ResultController'
     })
 
+    .when('/login', {
+      templateUrl: 'Login/login.html'
+    })
+
     .otherwise({
-      redirectTo: '/dogs'
+      redirectTo: '/pets'
     });
     // Your code here
 
