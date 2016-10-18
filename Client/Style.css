@@ -1,0 +1,45 @@
+body {
+	/*text-align: center;*/
+    background-image: url('bg.png')
+}
+.petName {
+	font-size: 30px;
+}
+
+.mainDiv {
+	background-color: white;
+	border-radius: 20px;
+	text-align: center;
+	padding-top: 10px;
+	margin: 0px 100px 0px 110px;
+}
+
+.mainDiv2 {
+	/*text-align: left;*/
+    /*margin: 0px 150px 0px 150px;*/
+	padding-top: 10px;
+}
+.title {
+    /*margin: 0px 375px 20px 375px;*/
+    margin: 20px 230px 20px 230px;
+    text-align: center;
+    background-color: white;
+}
+
+.title, .mainDiv2 {
+	border-radius: 20px;
+}
+
+.image {
+	float: left;
+	clear: right;
+}
+.panel {
+	margin-bottom: 200px;
+}
+
+.name {
+	text-align: center;
+	font-size: 20px;
+}
+

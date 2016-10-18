@@ -1,18 +1,26 @@
 <div id='container'>
   <head>
-  <h1>Pet Finder Results</h1>
   </head>
   <body>
-    <div ng-init="getPets()">
-      <!-- <button ng-click="getPets()">Get Results</button> -->
+    <div class='title'>
+      <h1>Pet Finder Results</h1>
       <a href='/#/dogs'>Go Back</a>
-      <ul>
-        <li ng-repeat='animal in data track by $index' >
-        <img ng-src="{{ animal.pic }}" height="300" width="300"/><br>
-        <div>{{ animal['name'] }}</div>
-        {{ animal['description'] }}
-        </li>
-      </ul>
+    </div>
+    <div ng-init="getPets()" class='mainDiv2'>
+      <!-- <button ng-click="getPets()">Get Results</button> -->
+      <div class="panel panel-info" ng-repeat='animal in data track by $index'>
+        <div class="panel-heading">
+          <div class="name">{{ animal['name'] }}</div>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-6">
+            <img ng-src="{{ animal.pic }}" height="300" width="300" class="img-circle" alt="Cinque Terre" /><br>
+          </div>
+          <div class="col-md-6">
+            <div>{{ animal['description'] }} </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </body>

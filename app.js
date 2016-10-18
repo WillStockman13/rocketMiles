@@ -24,12 +24,10 @@ app.get('/generate', function(req, res) {
 })
 
 app.post('/database', function(req, res) {
-  fs.exists('data', function(exists) {
-  	if(exists) {
-  		console.log(req.body)
-  		fs.appendFile('data', JSON.stringify(req.body))
-  	}
-  })
+
+	console.log('im in here', req.body)
+	fs.appendFile('data', JSON.stringify(req.body))
+
   res.end()
 })
 

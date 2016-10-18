@@ -1,8 +1,9 @@
 angular.module('pet')
 
 .controller('DogsController', function ($scope, $http) {
-  console.log('hello')
+  
   $scope.generateDogLike = function() {
+    console.log('hello')
   	$scope.Like($scope.data);
     return $http({
     	method: 'GET',

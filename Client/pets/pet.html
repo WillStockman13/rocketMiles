@@ -1,18 +1,18 @@
 <div id='container'>
-  <head>
-  <h1>Pet Finder</h1>
-  </head>
   <body>
-    <div>
-        <div ng-init='generateDogDisLike()'>
-        <img ng-src="{{ pic }}" height="300" width="300"/><br>
-        {{ name }}
+    <div class='col-md-12'>
+        <h1 class='title'>Pet Finder</h1>
+        <div class="mainDiv">
+          <div ng-init='generateDogDisLike()'>
+            <img ng-src="{{ pic }}" height="300" width="300" class="img-circle" alt="Cinque Terre" /><br>
+            <div class='petName'>{{ name }}</div>
+          </div>
+          <div class='col-md-12' id='middleColumn'>
+            <button ng-click='generateDogDisLike()' class='btn btn-default btn-danger'>dislike</button>
+            <button ng-click='generateDogLike()' class='btn btn-default btn-success'>like</button>
+          </div> 
+        <a href='/#/results'>View Results</a>
         </div>
-        <button ng-click='generateDogLike()'>like</button>
-        <button ng-click='generateDogDisLike()'>dislike</button>
-    </div>
-    <div>
-      <a href='/#/results'>View Results</a>
     </div>
   </body>
 
