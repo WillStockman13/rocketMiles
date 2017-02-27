@@ -1,0 +1,28 @@
+<div id='container'>
+  <body>
+    <div class='col-md-12'>
+        <h1 class='title'>Weather Near You</h1>
+        <div class="mainDiv">
+	        <div class='loading'>
+	          <image ng-src='../assets/Loading.gif' />
+	        </div>
+          <div ng-repeat='weather in data'>
+            <div class="panel-heading">
+              <div class="name">{{ weather['icon'] }}</div>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-6">
+                <img ng-src="{{ weather['pic']}}" height="100" width="100" alt="Cinque Terre" /><br>
+              </div>
+              <div class="col-md-6">
+                <div>Min Temp: {{ weather['temperatureMin']}} </div>
+                <div>Max Temp: {{ weather['temperatureMax']}} </div>
+                <div>Summary: {{ weather['summary']}} </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+
+</div>

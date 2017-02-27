@@ -1,27 +1,29 @@
 body {
-    background-image: url('bg.png')
+	background-repeat: no-repeat;
+    background-image: url('http://owltemplates.com/demo/website/korporate/dark/images/header/bg-blue-d.png')
 }
 .petName {
 	font-size: 30px;
 }
 
+.loading {
+	text-align: center;
+}
+
 .mainDiv {
-	background-color: white;
+	background: rgba(255, 255 , 255, 1);
+	height: 300px;
 	border-radius: 20px;
 	text-align: center;
 	padding-top: 10px;
 	margin: 0px 100px 0px 110px;
+	overflow-y: scroll;	
 }
 
-.mainDiv2 {
-	/*text-align: left;*/
-    /*margin: 0px 150px 0px 150px;*/
-	padding-top: 10px;
-}
 .title {
     margin: 10px 200px 20px 200px;
     text-align: center;
-    background-color: white;
+	background: rgba(255, 255 , 255, 1);
 }
 
 .title, .mainDiv2 {
@@ -36,17 +38,4 @@ body {
 .name {
 	text-align: center;
 	font-size: 20px;
-}
-
-.login {
-	margin-top: 100px;
-	padding: 100px 100px 100px 100px;
-}
-
-.inputLogIn {
-  font-size: 25px;
-}
-
-.logInTitle {
-	font-size: 60px;
 }
