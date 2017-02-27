@@ -8,7 +8,6 @@ angular.module('weather')
     function showPosition(position) {
       location.x = position.coords.latitude; 
       location.y = position.coords.longitude; 
-      console.log('hello', $scope.data)
       return $http({
         method: 'POST',
         url: '/api/getWeather',
@@ -17,7 +16,6 @@ angular.module('weather')
       })
       .then(function(resp) {
         for(var i = 0; i < resp.data.length; i++) {
-          console.log(resp.data[i].icon)
           if(resp.data[i].icon.indexOf('rain') >= 0) {
             resp.data[i].pic = '../assets/rain.jpeg';
           }
